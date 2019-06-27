@@ -54,4 +54,11 @@ album_stats['time_max_value_pct'] = time_max_value_pct
 album_stats['primary_time'] = primary_time
 
 full_data = albums.merge(album_stats, how='left', left_on='album_uri_to_use', right_index=True)
+
+# clean up the release year variable, remove the one entry listed for 2017 
+full_data['release_year'] = full_data['release_year'].astype('int64')
+full_data = full_data.loc[full_data['release_year'] != 2017]
+full_data = full_data.loc[full_data['publication_year'] != 2017]
+
+
 full_data.to_csv(path_or_buf='C:/Learning/ML/spotify/full_data.csv', index=False)

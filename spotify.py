@@ -4,6 +4,8 @@ Created on Mon May 13 00:40:36 2019
 
 @author: jwulz
 """
+
+import config
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import sqlite3
@@ -11,15 +13,9 @@ import pandas as pd
 import re
 
 # Flag to determine if data should be gotten from the API or from local files
-use_spotify_flag = False
+use_spotify_flag = True
 
-username = 'jxopx061fovofim81zfzopuhy'
-scope = 'user-library-read'
-client_id = '5ecfd8dbb5564e0f9edfb603739f24bc'
-client_secret = '79aec4218c37413fac1d2d2cbb786b2d'
-
-
-client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
+client_credentials_manager = SpotifyClientCredentials(client_id=config.client_id, client_secret=config.client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 
