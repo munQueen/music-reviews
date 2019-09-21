@@ -1,0 +1,1 @@
+The two Jupyter Notebooks in this folder chronicle the data exploration phase of the project. The first one, 'Visual EDA', contains the visualizations created to explore and uncover patterns in the data. The second, 'Statistical EDA' builds on the findings from the visualizations, using statistical tests to quantify the significance of the findings. 
